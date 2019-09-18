@@ -243,6 +243,8 @@ func (a *AGI) Command(cmd ...string) (resp *Response) {
 			break
 		}
 
+		a.logger.Printf("%s -----> %s \n", cmdString, raw)
+
 		// Parse and store the result code
 		pieces := responseRegex.FindStringSubmatch(raw)
 		if pieces == nil {
